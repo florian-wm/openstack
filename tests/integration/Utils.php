@@ -10,7 +10,7 @@ use OpenStack\OpenStack;
 
 class Utils
 {
-    public static function getOpenStack(): OpenStack
+    public static function getOpenStack()
     {
         return new OpenStack(self::getAuthOpts());
     }

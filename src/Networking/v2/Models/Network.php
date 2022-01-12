@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2\Models;
 
@@ -69,7 +69,7 @@ class Network extends OperatorResource implements Listable, Retrievable, Creatab
      *
      * @return Network[]
      */
-    public function bulkCreate(array $data): array
+    public function bulkCreate(array $data)
     {
         $response = $this->execute($this->api->postNetworks(), ['networks' => $data]);
 
@@ -81,7 +81,7 @@ class Network extends OperatorResource implements Listable, Retrievable, Creatab
      *
      * @param array $data {@see \OpenStack\Networking\v2\Api::postNetwork}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postNetwork(), $data);
 

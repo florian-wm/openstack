@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Api;
 
@@ -93,7 +93,7 @@ trait OperatorTrait
     /**
      * {@inheritdoc}
      */
-    public function getOperation(array $definition): Operation
+    public function getOperation(array $definition)
     {
         return new Operation($definition);
     }
@@ -103,7 +103,7 @@ trait OperatorTrait
      *
      * @throws \Exception
      */
-    protected function sendRequest(Operation $operation, array $userValues = [], bool $async = false)
+    protected function sendRequest(Operation $operation, array $userValues = [], $async = false)
     {
         $operation->validate($userValues);
 
@@ -122,7 +122,7 @@ trait OperatorTrait
     /**
      * {@inheritdoc}
      */
-    public function execute(array $definition, array $userValues = []): ResponseInterface
+    public function execute(array $definition, array $userValues = [])
     {
         return $this->sendRequest($this->getOperation($definition), $userValues);
     }
@@ -130,7 +130,7 @@ trait OperatorTrait
     /**
      * {@inheritdoc}
      */
-    public function executeAsync(array $definition, array $userValues = []): PromiseInterface
+    public function executeAsync(array $definition, array $userValues = [])
     {
         return $this->sendRequest($this->getOperation($definition), $userValues, true);
     }
@@ -138,7 +138,7 @@ trait OperatorTrait
     /**
      * {@inheritdoc}
      */
-    public function model(string $class, $data = null): ResourceInterface
+    public function model($class, $data = null)
     {
         $model = new $class($this->client, $this->api);
         // @codeCoverageIgnoreStart

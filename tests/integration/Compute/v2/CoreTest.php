@@ -78,7 +78,7 @@ class CoreTest extends TestCase
         return $this->networkService;
     }
 
-    private function getSecurityGroupService(): SecurityGroupService
+    private function getSecurityGroupService()
     {
         $this->secgroupService = $this->secgroupService ?? Utils::getOpenStack()->networkingV2ExtSecGroups();
         return $this->secgroupService;

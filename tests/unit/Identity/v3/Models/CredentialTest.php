@@ -11,7 +11,7 @@ class CredentialTest extends TestCase
 {
     private $credential;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

@@ -17,7 +17,7 @@ class ImageTest extends TestCase
 
     private $path;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

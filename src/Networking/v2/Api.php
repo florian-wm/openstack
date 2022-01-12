@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2;
 
@@ -20,7 +20,7 @@ class Api extends AbstractApi
         $this->params = new Params();
     }
 
-    public function getNetwork(): array
+    public function getNetwork()
     {
         return [
             'method' => 'GET',
@@ -29,7 +29,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getNetworks(): array
+    public function getNetworks()
     {
         return [
             'method' => 'GET',
@@ -43,7 +43,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postNetwork(): array
+    public function postNetwork()
     {
         return [
             'path'    => $this->pathPrefix.'/networks',
@@ -59,7 +59,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postNetworks(): array
+    public function postNetworks()
     {
         return [
             'path'    => $this->pathPrefix.'/networks',
@@ -82,7 +82,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putNetwork(): array
+    public function putNetwork()
     {
         return [
             'method'  => 'PUT',
@@ -97,7 +97,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteNetwork(): array
+    public function deleteNetwork()
     {
         return [
             'method' => 'DELETE',
@@ -106,7 +106,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getSubnet(): array
+    public function getSubnet()
     {
         return [
             'method' => 'GET',
@@ -115,7 +115,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getSubnets(): array
+    public function getSubnets()
     {
         return [
             'method' => 'GET',
@@ -127,7 +127,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postSubnet(): array
+    public function postSubnet()
     {
         return [
             'path'    => $this->pathPrefix.'/subnets',
@@ -148,7 +148,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postSubnets(): array
+    public function postSubnets()
     {
         return [
             'path'   => $this->pathPrefix.'/subnets',
@@ -166,7 +166,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putSubnet(): array
+    public function putSubnet()
     {
         return [
             'method'  => 'PUT',
@@ -183,7 +183,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteSubnet(): array
+    public function deleteSubnet()
     {
         return [
             'method' => 'DELETE',
@@ -192,7 +192,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getPorts(): array
+    public function getPorts()
     {
         return [
             'method' => 'GET',
@@ -212,7 +212,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postSinglePort(): array
+    public function postSinglePort()
     {
         return [
             'method'  => 'POST',
@@ -236,7 +236,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postMultiplePorts(): array
+    public function postMultiplePorts()
     {
         return [
             'method' => 'POST',
@@ -253,7 +253,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getPort(): array
+    public function getPort()
     {
         return [
             'method' => 'GET',
@@ -262,7 +262,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putPort(): array
+    public function putPort()
     {
         return [
             'method'  => 'PUT',
@@ -286,7 +286,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deletePort(): array
+    public function deletePort()
     {
         return [
             'method' => 'DELETE',
@@ -295,7 +295,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getQuotas(): array
+    public function getQuotas()
     {
         return [
             'method' => 'GET',
@@ -304,7 +304,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getQuota(): array
+    public function getQuota()
     {
         return [
             'method' => 'GET',
@@ -313,7 +313,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getQuotaDefault(): array
+    public function getQuotaDefault()
     {
         return [
             'method' => 'GET',
@@ -322,7 +322,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putQuota(): array
+    public function putQuota()
     {
         return [
             'method'  => 'PUT',
@@ -343,7 +343,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteQuota(): array
+    public function deleteQuota()
     {
         return [
             'method' => 'DELETE',
@@ -354,7 +354,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancers(): array
+    public function getLoadBalancers()
     {
         return [
             'method' => 'GET',
@@ -363,7 +363,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancer(): array
+    public function getLoadBalancer()
     {
         return [
             'method' => 'GET',
@@ -372,7 +372,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postLoadBalancer(): array
+    public function postLoadBalancer()
     {
         return [
             'method'  => 'POST',
@@ -390,7 +390,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putLoadBalancer(): array
+    public function putLoadBalancer()
     {
         return [
             'method'  => 'PUT',
@@ -405,7 +405,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteLoadBalancer(): array
+    public function deleteLoadBalancer()
     {
         return [
             'method' => 'DELETE',
@@ -416,7 +416,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerListeners(): array
+    public function getLoadBalancerListeners()
     {
         return [
             'method' => 'GET',
@@ -425,7 +425,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerListener(): array
+    public function getLoadBalancerListener()
     {
         return [
             'method' => 'GET',
@@ -434,7 +434,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postLoadBalancerListener(): array
+    public function postLoadBalancerListener()
     {
         return [
             'method'  => 'POST',
@@ -453,7 +453,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putLoadBalancerListener(): array
+    public function putLoadBalancerListener()
     {
         return [
             'method'  => 'PUT',
@@ -469,7 +469,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteLoadBalancerListener(): array
+    public function deleteLoadBalancerListener()
     {
         return [
             'method' => 'DELETE',
@@ -480,7 +480,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerPools(): array
+    public function getLoadBalancerPools()
     {
         return [
             'method' => 'GET',
@@ -489,7 +489,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerPool(): array
+    public function getLoadBalancerPool()
     {
         return [
             'method' => 'GET',
@@ -498,7 +498,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postLoadBalancerPool(): array
+    public function postLoadBalancerPool()
     {
         return [
             'method'  => 'POST',
@@ -516,7 +516,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putLoadBalancerPool(): array
+    public function putLoadBalancerPool()
     {
         return [
             'method'  => 'PUT',
@@ -533,7 +533,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteLoadBalancerPool(): array
+    public function deleteLoadBalancerPool()
     {
         return [
             'method' => 'DELETE',
@@ -544,7 +544,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerMembers(): array
+    public function getLoadBalancerMembers()
     {
         return [
             'method' => 'GET',
@@ -555,7 +555,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerMember(): array
+    public function getLoadBalancerMember()
     {
         return [
             'method' => 'GET',
@@ -567,7 +567,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postLoadBalancerMember(): array
+    public function postLoadBalancerMember()
     {
         return [
             'method'  => 'POST',
@@ -584,7 +584,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putLoadBalancerMember(): array
+    public function putLoadBalancerMember()
     {
         return [
             'method'  => 'PUT',
@@ -599,7 +599,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteLoadBalancerMember(): array
+    public function deleteLoadBalancerMember()
     {
         return [
             'method' => 'DELETE',
@@ -611,7 +611,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerStats(): array
+    public function getLoadBalancerStats()
     {
         return [
             'method' => 'GET',
@@ -622,7 +622,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerStatuses(): array
+    public function getLoadBalancerStatuses()
     {
         return [
             'method' => 'GET',
@@ -633,7 +633,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerHealthMonitors(): array
+    public function getLoadBalancerHealthMonitors()
     {
         return [
             'method' => 'GET',
@@ -642,7 +642,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getLoadBalancerHealthMonitor(): array
+    public function getLoadBalancerHealthMonitor()
     {
         return [
             'method' => 'GET',
@@ -653,7 +653,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postLoadBalancerHealthMonitor(): array
+    public function postLoadBalancerHealthMonitor()
     {
         return [
             'method'  => 'POST',
@@ -674,7 +674,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putLoadBalancerHealthMonitor(): array
+    public function putLoadBalancerHealthMonitor()
     {
         return [
             'method'  => 'PUT',
@@ -693,7 +693,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteLoadBalancerHealthMonitor(): array
+    public function deleteLoadBalancerHealthMonitor()
     {
         return [
             'method' => 'DELETE',

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Compute\v2;
 
@@ -8,7 +8,7 @@ use OpenStack\Common\Api\AbstractParams;
 
 class Params extends AbstractParams
 {
-    public function urlId(string $type): array
+    public function urlId($type)
     {
         return array_merge(parent::id($type), [
             'required'   => true,
@@ -17,7 +17,7 @@ class Params extends AbstractParams
         ]);
     }
 
-    public function resetState(): array
+    public function resetState()
     {
         return [
             'type'       => self::OBJECT_TYPE,
@@ -30,7 +30,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function minDisk(): array
+    public function minDisk()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -39,7 +39,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function minRam(): array
+    public function minRam()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -48,7 +48,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function flavorName(): array
+    public function flavorName()
     {
         return [
             'location'    => self::QUERY,
@@ -68,7 +68,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function flavorServer(): array
+    public function flavorServer()
     {
         return [
             'location'    => self::QUERY,
@@ -76,7 +76,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function filterStatus(string $type): array
+    public function filterStatus($type)
     {
         return [
             'location'    => self::QUERY,
@@ -87,7 +87,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function flavorType(): array
+    public function flavorType()
     {
         return [
             'location'    => self::QUERY,
@@ -95,7 +95,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function key(): array
+    public function key()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -105,7 +105,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function ipv4(): array
+    public function ipv4()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -115,7 +115,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function ipv6(): array
+    public function ipv6()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -125,7 +125,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function imageId(): array
+    public function imageId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -135,7 +135,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function rescueImageId(): array
+    public function rescueImageId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -145,7 +145,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function flavorId(): array
+    public function flavorId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -155,7 +155,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function networkId(): array
+    public function networkId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -165,7 +165,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function portId(): array
+    public function portId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -175,14 +175,14 @@ class Params extends AbstractParams
         ];
     }
 
-    public function tag(): array
+    public function tag()
     {
         return [
             'type' => self::STRING_TYPE,
         ];
     }
 
-    public function fixedIpAddresses(): array
+    public function fixedIpAddresses()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -195,7 +195,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function metadata(): array
+    public function metadata()
     {
         return [
             'type'        => self::OBJECT_TYPE,
@@ -211,7 +211,7 @@ TYPEOTHER
         ];
     }
 
-    public function personality(): array
+    public function personality()
     {
         return [
             'type'  => self::ARRAY_TYPE,
@@ -236,7 +236,7 @@ EOL
         ];
     }
 
-    public function securityGroups(): array
+    public function securityGroups()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -249,7 +249,7 @@ EOL
         ];
     }
 
-    public function userData(): array
+    public function userData()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -258,7 +258,7 @@ EOL
         ];
     }
 
-    public function availabilityZone(): array
+    public function availabilityZone()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -267,7 +267,7 @@ EOL
         ];
     }
 
-    public function networks(): array
+    public function networks()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -304,7 +304,7 @@ EOL
         ];
     }
 
-    public function blockDeviceMapping(): array
+    public function blockDeviceMapping()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -366,7 +366,7 @@ EOL
         ];
     }
 
-    public function filterHost(): array
+    public function filterHost()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -375,7 +375,7 @@ EOL
         ];
     }
 
-    public function filterName(): array
+    public function filterName()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -384,7 +384,7 @@ EOL
         ];
     }
 
-    public function filterFlavor(): array
+    public function filterFlavor()
     {
         return [
             'sentAs'      => 'flavor',
@@ -394,7 +394,7 @@ EOL
         ];
     }
 
-    public function filterImage(): array
+    public function filterImage()
     {
         return [
             'sentAs'      => 'image',
@@ -404,7 +404,7 @@ EOL
         ];
     }
 
-    public function password(): array
+    public function password()
     {
         return [
             'sentAs'      => 'adminPass',
@@ -415,7 +415,7 @@ EOL
         ];
     }
 
-    public function rebootType(): array
+    public function rebootType()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -425,7 +425,7 @@ EOL
         ];
     }
 
-    public function nullAction(): array
+    public function nullAction()
     {
         return [
             'type'     => self::NULL_TYPE,
@@ -434,7 +434,7 @@ EOL
         ];
     }
 
-    public function networkLabel(): array
+    public function networkLabel()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -443,7 +443,7 @@ EOL
         ];
     }
 
-    public function keyName(): array
+    public function keyName()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -453,7 +453,7 @@ EOL
         ];
     }
 
-    public function keypairPublicKey(): array
+    public function keypairPublicKey()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -463,14 +463,14 @@ EOL
         ];
     }
 
-    public function keypairName(): array
+    public function keypairName()
     {
         return [
             'location' => self::URL,
         ];
     }
 
-    public function userId(): array
+    public function userId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -480,7 +480,7 @@ EOL
         ];
     }
 
-    public function keypairUserId(): array
+    public function keypairUserId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -490,7 +490,7 @@ EOL
         ];
     }
 
-    public function keypairType(): array
+    public function keypairType()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -499,7 +499,7 @@ EOL
         ];
     }
 
-    public function flavorRam(): array
+    public function flavorRam()
     {
         return [
             'type'     => self::INT_TYPE,
@@ -507,7 +507,7 @@ EOL
         ];
     }
 
-    public function flavorVcpus(): array
+    public function flavorVcpus()
     {
         return [
             'type'     => self::INT_TYPE,
@@ -515,7 +515,7 @@ EOL
         ];
     }
 
-    public function flavorDisk(): array
+    public function flavorDisk()
     {
         return [
             'type'     => self::INT_TYPE,
@@ -523,7 +523,7 @@ EOL
         ];
     }
 
-    public function flavorSwap(): array
+    public function flavorSwap()
     {
         return [
             'type'     => self::INT_TYPE,
@@ -531,7 +531,7 @@ EOL
         ];
     }
 
-    public function volumeId(): array
+    public function volumeId()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -539,7 +539,7 @@ EOL
         ];
     }
 
-    public function attachmentId(): array
+    public function attachmentId()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -548,7 +548,7 @@ EOL
         ];
     }
 
-    public function consoleType(): array
+    public function consoleType()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -557,7 +557,7 @@ EOL
         ];
     }
 
-    public function consoleLogLength(): array
+    public function consoleLogLength()
     {
         return [
             'type'     => self::INT_TYPE,
@@ -566,14 +566,14 @@ EOL
         ];
     }
 
-    public function emptyObject(): array
+    public function emptyObject()
     {
         return [
             'type' => self::OBJECT_TYPE,
         ];
     }
 
-    protected function quotaSetLimit($sentAs, $description): array
+    protected function quotaSetLimit($sentAs, $description)
     {
         return [
             'type'        => self::INT_TYPE,
@@ -583,7 +583,7 @@ EOL
         ];
     }
 
-    public function quotaSetLimitForce(): array
+    public function quotaSetLimitForce()
     {
         return [
             'type'        => self::BOOLEAN_TYPE,
@@ -593,72 +593,72 @@ EOL
         ];
     }
 
-    public function quotaSetLimitInstances(): array
+    public function quotaSetLimitInstances()
     {
         return $this->quotaSetLimit('instances', 'The number of allowed instances for each tenant.');
     }
 
-    public function quotaSetLimitCores(): array
+    public function quotaSetLimitCores()
     {
         return $this->quotaSetLimit('cores', 'The number of allowed instance cores for each tenant.');
     }
 
-    public function quotaSetLimitFixedIps(): array
+    public function quotaSetLimitFixedIps()
     {
         return $this->quotaSetLimit('fixed_ips', 'The number of allowed fixed IP addresses for each tenant. Must be equal to or greater than the number of allowed instances.');
     }
 
-    public function quotaSetLimitFloatingIps(): array
+    public function quotaSetLimitFloatingIps()
     {
         return $this->quotaSetLimit('floating_ips', 'The number of allowed floating IP addresses for each tenant.');
     }
 
-    public function quotaSetLimitInjectedFileContentBytes(): array
+    public function quotaSetLimitInjectedFileContentBytes()
     {
         return $this->quotaSetLimit('injected_file_content_bytes', 'The number of allowed bytes of content for each injected file.');
     }
 
-    public function quotaSetLimitInjectedFilePathBytes(): array
+    public function quotaSetLimitInjectedFilePathBytes()
     {
         return $this->quotaSetLimit('injected_file_path_bytes', 'The number of allowed bytes for each injected file path.');
     }
 
-    public function quotaSetLimitInjectedFiles(): array
+    public function quotaSetLimitInjectedFiles()
     {
         return $this->quotaSetLimit('injected_files', 'The number of allowed injected files for each tenant.');
     }
 
-    public function quotaSetLimitKeyPairs(): array
+    public function quotaSetLimitKeyPairs()
     {
         return $this->quotaSetLimit('key_pairs', 'The number of allowed key pairs for each user.');
     }
 
-    public function quotaSetLimitMetadataItems(): array
+    public function quotaSetLimitMetadataItems()
     {
         return $this->quotaSetLimit('metadata_items', 'The number of allowed metadata items for each instance.');
     }
 
-    public function quotaSetLimitRam(): array
+    public function quotaSetLimitRam()
     {
         return $this->quotaSetLimit('ram', 'The amount of allowed instance RAM (in MB) for each tenant.');
     }
 
-    public function quotaSetLimitSecurityGroupRules(): array
+    public function quotaSetLimitSecurityGroupRules()
     {
         return $this->quotaSetLimit('security_group_rules', 'The number of allowed rules for each security group.');
     }
 
-    public function quotaSetLimitSecurityGroups(): array
+    public function quotaSetLimitSecurityGroups()
     {
         return $this->quotaSetLimit('security_groups', 'The number of allowed security groups for each tenant.');
     }
 
-    public function quotaSetLimitServerGroups(): array
+    public function quotaSetLimitServerGroups()
     {
         return $this->quotaSetLimit('server_groups', 'The number of allowed server groups for each tenant.');
     }
 
-    public function quotaSetLimitServerGroupMembers(): array
+    public function quotaSetLimitServerGroupMembers()
     {
         return $this->quotaSetLimit('server_group_members', 'The number of allowed members for each server group.');
     }

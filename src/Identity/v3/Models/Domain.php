@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v3\Models;
 
@@ -40,7 +40,7 @@ class Domain extends OperatorResource implements Creatable, Listable, Retrievabl
      *
      * @param array $data {@see \OpenStack\Identity\v3\Api::postDomains}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postDomains(), $data);
 
@@ -76,7 +76,7 @@ class Domain extends OperatorResource implements Creatable, Listable, Retrievabl
     /**
      * @param array $options {@see \OpenStack\Identity\v3\Api::getUserRoles}
      */
-    public function listUserRoles(array $options = []): \Generator
+    public function listUserRoles(array $options = [])
     {
         $options['domainId'] = $this->id;
 
@@ -94,7 +94,7 @@ class Domain extends OperatorResource implements Creatable, Listable, Retrievabl
     /**
      * @param array $options {@see \OpenStack\Identity\v3\Api::headUserRole}
      */
-    public function checkUserRole(array $options = []): bool
+    public function checkUserRole(array $options = [])
     {
         try {
             $this->execute($this->api->headUserRole(), ['domainId' => $this->id] + $options);
@@ -116,7 +116,7 @@ class Domain extends OperatorResource implements Creatable, Listable, Retrievabl
     /**
      * @param array $options {@see \OpenStack\Identity\v3\Api::getGroupRoles}
      */
-    public function listGroupRoles(array $options = []): \Generator
+    public function listGroupRoles(array $options = [])
     {
         $options['domainId'] = $this->id;
 
@@ -134,7 +134,7 @@ class Domain extends OperatorResource implements Creatable, Listable, Retrievabl
     /**
      * @param array $options {@see \OpenStack\Identity\v3\Api::headGroupRole}
      */
-    public function checkGroupRole(array $options = []): bool
+    public function checkGroupRole(array $options = [])
     {
         try {
             $this->execute($this->api->headGroupRole(), ['domainId' => $this->id] + $options);

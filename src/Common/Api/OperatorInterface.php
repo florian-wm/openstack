@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Api;
 
@@ -29,7 +29,7 @@ interface OperatorInterface
      * @param array $definition The data that dictates how the operation works
      * @param array $userValues The user-defined values that populate the request
      */
-    public function execute(array $definition, array $userValues = []): ResponseInterface;
+    public function execute(array $definition, array $userValues = []);
 
     /**
      * A convenience method that assembles an operation and asynchronously sends it to the remote API.
@@ -37,7 +37,7 @@ interface OperatorInterface
      * @param array $definition The data that dictates how the operation works
      * @param array $userValues The user-defined values that populate the request
      */
-    public function executeAsync(array $definition, array $userValues = []): PromiseInterface;
+    public function executeAsync(array $definition, array $userValues = []);
 
     /**
      * Retrieves a populated Operation according to the definition and values provided. A
@@ -45,12 +45,12 @@ interface OperatorInterface
      *
      * @param array $definition The data that dictates how the operation works
      */
-    public function getOperation(array $definition): Operation;
+    public function getOperation(array $definition);
 
     /**
      * @param string $class the name of the model class
      * @param mixed  $data  either a {@see ResponseInterface} or data array that will populate the newly
      *                      created model class
      */
-    public function model(string $class, $data = null): ResourceInterface;
+    public function model($class, $data = null);
 }

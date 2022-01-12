@@ -11,7 +11,7 @@ class SubnetTest extends TestCase
 {
     private $subnet;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

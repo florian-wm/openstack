@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Images\v2\Models;
 
@@ -88,7 +88,7 @@ class Image extends OperatorResource implements Creatable, Listable, Retrievable
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'created_at' => new Alias('createdAt', \DateTimeImmutable::class),
@@ -98,7 +98,7 @@ class Image extends OperatorResource implements Creatable, Listable, Retrievable
         ];
     }
 
-    public function populateFromArray(array $data): self
+    public function populateFromArray(array $data)
     {
         parent::populateFromArray($data);
 
@@ -115,7 +115,7 @@ class Image extends OperatorResource implements Creatable, Listable, Retrievable
         return $this;
     }
 
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postImages(), $data);
 
@@ -128,7 +128,7 @@ class Image extends OperatorResource implements Creatable, Listable, Retrievable
         $this->populateFromResponse($response);
     }
 
-    private function getSchema(): Schema
+    private function getSchema()
     {
         if (null === $this->jsonSchema) {
             $response         = $this->execute($this->api->getImageSchema());
@@ -201,24 +201,24 @@ class Image extends OperatorResource implements Creatable, Listable, Retrievable
         ]);
     }
 
-    public function downloadData(): StreamInterface
+    public function downloadData()
     {
         $response = $this->executeWithState($this->api->getImageData());
 
         return $response->getBody();
     }
 
-    public function addMember($memberId): Member
+    public function addMember($memberId)
     {
         return $this->model(Member::class, ['imageId' => $this->id, 'id' => $memberId])->create([]);
     }
 
-    public function listMembers(): \Generator
+    public function listMembers()
     {
         return $this->model(Member::class)->enumerate($this->api->getImageMembers(), ['imageId' => $this->id]);
     }
 
-    public function getMember($memberId): Member
+    public function getMember($memberId)
     {
         return $this->model(Member::class, ['imageId' => $this->id, 'id' => $memberId]);
     }

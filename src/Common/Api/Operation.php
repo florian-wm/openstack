@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Api;
 
@@ -44,12 +44,12 @@ class Operation
         $this->params = self::toParamArray($definition['params']);
     }
 
-    public function getPath(): string
+    public function getPath()
     {
         return $this->path;
     }
 
-    public function getMethod(): string
+    public function getMethod()
     {
         return $this->method;
     }
@@ -59,7 +59,7 @@ class Operation
      *
      * @param $key The name of a parameter
      */
-    public function hasParam(string $key): bool
+    public function hasParam($key)
     {
         return isset($this->params[$key]);
     }
@@ -69,12 +69,12 @@ class Operation
      *
      * @return Parameter
      */
-    public function getParam(string $name)
+    public function getParam($name)
     {
         return isset($this->params[$name]) ? $this->params[$name] : null;
     }
 
-    public function getJsonKey(): string
+    public function getJsonKey()
     {
         return $this->jsonKey ?: '';
     }
@@ -85,7 +85,7 @@ class Operation
      *
      * @param array $data A generic data array
      */
-    public static function toParamArray(array $data): array
+    public static function toParamArray(array $data)
     {
         $params = [];
 
@@ -107,7 +107,7 @@ class Operation
      *
      * @throws \Exception If validate fails
      */
-    public function validate(array $userValues): bool
+    public function validate(array $userValues)
     {
         foreach ($this->params as $paramName => $param) {
             if (array_key_exists($paramName, $userValues)) {

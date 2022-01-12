@@ -19,7 +19,7 @@ class OperatorTraitTest extends TestCase
 
     private $def;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

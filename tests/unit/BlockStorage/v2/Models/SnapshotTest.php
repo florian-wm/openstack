@@ -12,7 +12,7 @@ class SnapshotTest extends TestCase
     /** @var Snapshot */
     private $snapshot;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

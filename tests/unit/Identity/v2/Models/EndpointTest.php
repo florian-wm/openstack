@@ -10,7 +10,7 @@ class EndpointTest extends TestCase
 {
     private $endpoint;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

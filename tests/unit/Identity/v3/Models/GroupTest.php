@@ -13,7 +13,7 @@ class GroupTest extends TestCase
 {
     private $group;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
         parent::setUp();

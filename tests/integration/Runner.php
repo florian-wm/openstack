@@ -20,7 +20,7 @@ class Runner
         $this->assembleTestFiles();
     }
 
-    private function traverse(string $path): \DirectoryIterator
+    private function traverse($path)
     {
         return new \DirectoryIterator($path);
     }

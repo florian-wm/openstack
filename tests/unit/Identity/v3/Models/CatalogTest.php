@@ -12,7 +12,7 @@ class CatalogTest extends TestCase
 {
     private $catalog;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

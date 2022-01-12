@@ -11,7 +11,7 @@ class ParameterTest extends \PHPUnit\Framework\TestCase
     private $data;
     private $api;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->api = new ComputeV2Api();
 

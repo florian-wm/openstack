@@ -11,7 +11,7 @@ class UserTest extends TestCase
 {
     private $user;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

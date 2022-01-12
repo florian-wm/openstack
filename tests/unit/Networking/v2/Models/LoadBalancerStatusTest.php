@@ -12,7 +12,7 @@ class LoadBalancerStatusTest extends TestCase
 {
     private $status;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

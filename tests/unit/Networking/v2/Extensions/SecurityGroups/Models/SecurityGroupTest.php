@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php 
 
 namespace OpenStack\Test\Networking\v2\Extensions\SecurityGroups\Models;
 
@@ -14,7 +14,7 @@ class SecurityGroupTest extends TestCase
 
     const SECURITY_GROUP_ID = '85cc3048-abc3-43cc-89b3-377341426ac5';
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

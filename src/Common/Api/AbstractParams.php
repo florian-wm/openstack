@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Api;
 
@@ -23,12 +23,12 @@ abstract class AbstractParams
     const INT_TYPE     = 'integer';
     const INTEGER_TYPE = self::INT_TYPE;
 
-    public static function isSupportedLocation(string $val): bool
+    public static function isSupportedLocation($val)
     {
         return in_array($val, [self::QUERY, self::HEADER, self::URL, self::JSON, self::RAW]);
     }
 
-    public function limit(): array
+    public function limit()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -40,7 +40,7 @@ DESC
         ];
     }
 
-    public function marker(): array
+    public function marker()
     {
         return [
             'type'        => 'string',
@@ -53,7 +53,7 @@ DESC
         ];
     }
 
-    public function id(string $type): array
+    public function id($type)
     {
         return [
             'description' => sprintf('The unique ID, or identifier, for the %s', $type),
@@ -62,7 +62,7 @@ DESC
         ];
     }
 
-    public function idPath(): array
+    public function idPath()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -71,7 +71,7 @@ DESC
         ];
     }
 
-    public function name(string $resource): array
+    public function name($resource)
     {
         return [
             'description' => sprintf('The name of the %s', $resource),
@@ -80,7 +80,7 @@ DESC
         ];
     }
 
-    public function sortDir(): array
+    public function sortDir()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -90,7 +90,7 @@ DESC
         ];
     }
 
-    public function sortKey(): array
+    public function sortKey()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -99,7 +99,7 @@ DESC
         ];
     }
 
-    public function allTenants(): array
+    public function allTenants()
     {
         return [
             'type'        => self::BOOL_TYPE,

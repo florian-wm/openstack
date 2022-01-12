@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Resource;
 
@@ -24,7 +24,7 @@ trait HasWaiterTrait
      *                            or exceed this timeout, the blocking operation will immediately cease.
      * @param int    $sleepPeriod the amount of time to pause between each HTTP request
      */
-    public function waitUntil(string $status, $timeout = 60, int $sleepPeriod = 1)
+    public function waitUntil($status, $timeout = 60, int $sleepPeriod = 1)
     {
         $startTime = time();
 

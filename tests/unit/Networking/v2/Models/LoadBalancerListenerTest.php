@@ -11,7 +11,7 @@ class LoadBalancerListenerTest extends TestCase
 {
     private $listener;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

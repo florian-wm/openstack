@@ -13,7 +13,7 @@ class JsonSerializerTest extends \PHPUnit\Framework\TestCase
     /** @var JsonSerializer */
     private $serializer;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->serializer = new JsonSerializer();
     }

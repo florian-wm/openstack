@@ -17,7 +17,7 @@ class ServiceTest extends TestCase
     /** @var Service */
     private $service;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

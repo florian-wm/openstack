@@ -9,7 +9,7 @@ class ArrayAccessTraitTest extends TestCase
 {
     private $aa;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->aa = new ArrayAccess();
     }

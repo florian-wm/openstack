@@ -18,7 +18,7 @@ class ContainerTest extends TestCase
 
     private $container;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

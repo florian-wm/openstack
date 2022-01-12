@@ -11,7 +11,7 @@ class BadResponseErrorTest extends TestCase
 {
     private $e;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->e = new BadResponseError();
     }

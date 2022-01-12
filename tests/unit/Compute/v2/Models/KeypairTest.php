@@ -14,7 +14,7 @@ class KeypairTest extends TestCase
 
     const KEYPAIR_NAME = 'keypair-test';
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

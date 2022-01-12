@@ -12,7 +12,7 @@ class QuotaSetTest extends TestCase
     /** @var QuotaSet */
     private $quotaSet;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

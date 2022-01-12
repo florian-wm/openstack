@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Compute\v2\Models;
 
@@ -53,7 +53,7 @@ class Flavor extends OperatorResource implements Listable, Retrievable, Creatabl
     /**
      * {@inheritdoc}
      */
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $response = $this->execute($this->api->postFlavors(), $userOptions);
 

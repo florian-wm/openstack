@@ -12,7 +12,7 @@ class ResourceTest extends TestCase
     /** @var Resource */
     private $resource;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

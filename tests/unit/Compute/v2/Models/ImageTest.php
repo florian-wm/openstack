@@ -11,7 +11,7 @@ class ImageTest extends TestCase
 {
     private $image;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

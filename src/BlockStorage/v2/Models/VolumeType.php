@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\BlockStorage\v2\Models;
 
@@ -27,7 +27,7 @@ class VolumeType extends OperatorResource implements Listable, Creatable, Update
     /**
      * @param array $userOptions {@see \OpenStack\BlockStorage\v2\Api::postTypes}
      */
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $response = $this->execute($this->api->postTypes(), $userOptions);
 

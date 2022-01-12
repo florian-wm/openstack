@@ -13,7 +13,7 @@ class LoadBalancerPoolTest extends TestCase
 {
     private $pool;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

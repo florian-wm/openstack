@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\JsonSchema;
 
@@ -20,7 +20,7 @@ class Schema
         $this->validator = $validator ?: new Validator();
     }
 
-    public function getPropertyPaths(): array
+    public function getPropertyPaths()
     {
         $paths = [];
 
@@ -31,7 +31,7 @@ class Schema
         return $paths;
     }
 
-    public function normalizeObject($subject, array $aliases): \stdClass
+    public function normalizeObject($subject, array $aliases)
     {
         $out = new \stdClass();
 
@@ -55,17 +55,17 @@ class Schema
         $this->validator->check($data, $this->body);
     }
 
-    public function isValid(): bool
+    public function isValid()
     {
         return $this->validator->isValid();
     }
 
-    public function getErrors(): array
+    public function getErrors()
     {
         return $this->validator->getErrors();
     }
 
-    public function getErrorString(): string
+    public function getErrorString()
     {
         $msg = "Provided values do not validate. Errors:\n";
 

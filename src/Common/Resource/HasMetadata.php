@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Resource;
 
@@ -12,7 +12,7 @@ interface HasMetadata
      * Retrieves the metadata for the resource in the form of an associative array or hash. Each key represents the
      * metadata item's name, and each value represents the metadata item's remote value.
      */
-    public function getMetadata(): array;
+    public function getMetadata();
 
     /**
      * Merges a set of new values with those which already exist (on the remote API) for a resource. For example, if
@@ -55,5 +55,5 @@ interface HasMetadata
     /**
      * Extracts metadata from a response object and returns it in the form of an associative array.
      */
-    public function parseMetadata(ResponseInterface $response): array;
+    public function parseMetadata(ResponseInterface $response);
 }

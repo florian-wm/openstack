@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Compute\v2\Models;
 
@@ -59,7 +59,7 @@ class Keypair extends OperatorResource implements Listable, Retrievable, Deletab
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'created_at' => new Alias('createdAt', \DateTimeImmutable::class),
@@ -75,7 +75,7 @@ class Keypair extends OperatorResource implements Listable, Retrievable, Deletab
         $this->populateFromResponse($response);
     }
 
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $response = $this->execute($this->api->postKeypair(), $userOptions);
 
@@ -85,7 +85,7 @@ class Keypair extends OperatorResource implements Listable, Retrievable, Deletab
     /**
      * {@inheritdoc}
      */
-    public function populateFromArray(array $array): self
+    public function populateFromArray(array $array)
     {
         return parent::populateFromArray(Utils::flattenJson($array, $this->resourceKey));
     }

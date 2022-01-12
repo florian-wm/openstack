@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2\Models;
 
@@ -84,7 +84,7 @@ class LoadBalancer extends OperatorResource implements Creatable, Retrievable, U
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'listeners' => new Alias('listeners', LoadBalancerListener::class, true),
@@ -94,7 +94,7 @@ class LoadBalancer extends OperatorResource implements Creatable, Retrievable, U
     /**
      * {@inheritdoc}
      */
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $response = $this->execute($this->api->postLoadBalancer(), $userOptions);
 
@@ -130,7 +130,7 @@ class LoadBalancer extends OperatorResource implements Creatable, Retrievable, U
     /**
      * Add a listener to this load balancer.
      */
-    public function addListener(array $userOptions = []): LoadBalancerListener
+    public function addListener(array $userOptions = [])
     {
         $userOptions = array_merge(['loadbalancerId' => $this->id], $userOptions);
 
@@ -140,7 +140,7 @@ class LoadBalancer extends OperatorResource implements Creatable, Retrievable, U
     /**
      * Get stats for this loadbalancer.
      */
-    public function getStats(): LoadBalancerStat
+    public function getStats()
     {
         $model = $this->model(LoadBalancerStat::class, ['loadbalancerId' => $this->id]);
         $model->retrieve();
@@ -151,7 +151,7 @@ class LoadBalancer extends OperatorResource implements Creatable, Retrievable, U
     /**
      * Get the status tree for this loadbalancer.
      */
-    public function getStatuses(): LoadBalancerStatus
+    public function getStatuses()
     {
         $model = $this->model(LoadBalancerStatus::class, ['loadbalancerId' => $this->id]);
         $model->retrieve();

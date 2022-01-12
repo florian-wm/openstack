@@ -15,7 +15,7 @@ class SchemaTest extends TestCase
     private $validator;
     private $body;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->body = [
             'properties' => [

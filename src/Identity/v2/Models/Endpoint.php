@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v2\Models;
 
@@ -35,7 +35,7 @@ class Endpoint extends OperatorResource
     /**
      * Indicates whether a given region is supported.
      */
-    public function supportsRegion(string $region): bool
+    public function supportsRegion($region)
     {
         return $this->region == $region;
     }
@@ -43,7 +43,7 @@ class Endpoint extends OperatorResource
     /**
      * Indicates whether a given URL type is supported.
      */
-    public function supportsUrlType(string $urlType): bool
+    public function supportsUrlType($urlType)
     {
         $supported = false;
 
@@ -65,7 +65,7 @@ class Endpoint extends OperatorResource
      *
      * @return bool|string
      */
-    public function getUrl(string $urlType): string
+    public function getUrl($urlType)
     {
         $url = false;
 

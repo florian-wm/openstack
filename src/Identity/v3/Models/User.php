@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v3\Models;
 
@@ -53,7 +53,7 @@ class User extends OperatorResource implements Creatable, Listable, Retrievable,
      *
      * @param array $data {@see \OpenStack\Identity\v3\Api::postUsers}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postUsers(), $data);
 
@@ -86,14 +86,14 @@ class User extends OperatorResource implements Creatable, Listable, Retrievable,
         $this->execute($this->api->deleteUser(), ['id' => $this->id]);
     }
 
-    public function listGroups(): \Generator
+    public function listGroups()
     {
         $options['id'] = $this->id;
 
         return $this->model(Group::class)->enumerate($this->api->getUserGroups(), $options);
     }
 
-    public function listProjects(): \Generator
+    public function listProjects()
     {
         return $this->model(Project::class)->enumerate($this->api->getUserProjects(), ['id' => $this->id]);
     }

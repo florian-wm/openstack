@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php 
 
 namespace OpenStack\Test\Networking\v2\Extensions\SecurityGroups\Models;
 
@@ -12,7 +12,7 @@ class SecurityGroupRuleTest extends TestCase
     /** @var SecurityGroupRule */
     private $securityGroupRule;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

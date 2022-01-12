@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2\Extensions\SecurityGroups\Models;
 
@@ -83,7 +83,7 @@ class SecurityGroupRule extends OperatorResource implements Creatable, Listable,
     /**
      * {@inheritdoc}
      */
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $response = $this->execute($this->api->postSecurityRules(), $userOptions);
 

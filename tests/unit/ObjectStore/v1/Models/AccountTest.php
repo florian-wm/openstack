@@ -10,7 +10,7 @@ class AccountTest extends TestCase
 {
     private $account;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

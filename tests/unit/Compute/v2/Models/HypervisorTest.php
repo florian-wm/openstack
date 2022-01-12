@@ -13,7 +13,7 @@ class HypervisorTest extends TestCase
 
     const ID = 1;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

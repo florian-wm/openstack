@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Metric\v1\Gnocchi;
 
@@ -15,7 +15,7 @@ class Api extends AbstractApi
         $this->params = new Params();
     }
 
-    public function getResources(): array
+    public function getResources()
     {
         return [
             'path'   => $this->pathPrefix.'/resource/{type}',
@@ -29,7 +29,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getResource(): array
+    public function getResource()
     {
         return [
             'path'   => $this->pathPrefix.'/resource/{type}/{id}',
@@ -41,7 +41,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function searchResources(): array
+    public function searchResources()
     {
         return [
             'path'   => $this->pathPrefix.'/search/resource/{type}',
@@ -57,7 +57,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getResourceTypes(): array
+    public function getResourceTypes()
     {
         return [
             'path'   => $this->pathPrefix.'/resource_type',
@@ -66,7 +66,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getMetric(): array
+    public function getMetric()
     {
         return [
             'path'   => $this->pathPrefix.'/metric/{id}',
@@ -77,7 +77,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getMetrics(): array
+    public function getMetrics()
     {
         return [
             'path'   => $this->pathPrefix.'/metric',
@@ -90,7 +90,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getResourceMetrics(): array
+    public function getResourceMetrics()
     {
         return [
             'path'   => $this->pathPrefix.'/resource/generic/{resourceId}/metric',
@@ -101,7 +101,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getResourceMetric(): array
+    public function getResourceMetric()
     {
         return [
             'path'   => $this->pathPrefix.'/resource/{type}/{resourceId}/metric/{metric}',
@@ -114,7 +114,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getResourceMetricMeasures(): array
+    public function getResourceMetricMeasures()
     {
         return [
             'path'   => $this->pathPrefix.'/resource/{type}/{resourceId}/metric/{metric}/measures',

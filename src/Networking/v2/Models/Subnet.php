@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2\Models;
 
@@ -84,7 +84,7 @@ class Subnet extends OperatorResource implements Listable, Retrievable, Creatabl
      *
      * @return Subnet[]
      */
-    public function bulkCreate(array $data): array
+    public function bulkCreate(array $data)
     {
         $response = $this->execute($this->api->postSubnets(), ['subnets' => $data]);
 
@@ -96,7 +96,7 @@ class Subnet extends OperatorResource implements Listable, Retrievable, Creatabl
      *
      * @param array $data {@see \OpenStack\Networking\v2\Api::postSubnet}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postSubnet(), $data);
 

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack;
 
@@ -44,7 +44,7 @@ class OpenStack
         $this->builder = $builder ?: new Builder($options, 'OpenStack');
     }
 
-    private function getDefaultIdentityService(array $options): Service
+    private function getDefaultIdentityService(array $options)
     {
         if (!isset($options['authUrl'])) {
             throw new \InvalidArgumentException("'authUrl' is a required option");
@@ -77,7 +77,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function computeV2(array $options = []): Compute\v2\Service
+    public function computeV2(array $options = [])
     {
         $defaults = ['catalogName' => 'nova', 'catalogType' => 'compute'];
 
@@ -89,7 +89,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function networkingV2(array $options = []): Networking\v2\Service
+    public function networkingV2(array $options = [])
     {
         $defaults = ['catalogName' => 'neutron', 'catalogType' => 'network'];
 
@@ -101,7 +101,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function networkingV2ExtLayer3(array $options = []): Networking\v2\Extensions\Layer3\Service
+    public function networkingV2ExtLayer3(array $options = [])
     {
         $defaults = ['catalogName' => 'neutron', 'catalogType' => 'network'];
 
@@ -113,7 +113,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function networkingV2ExtSecGroups(array $options = []): Networking\v2\Extensions\SecurityGroups\Service
+    public function networkingV2ExtSecGroups(array $options = [])
     {
         $defaults = ['catalogName' => 'neutron', 'catalogType' => 'network'];
 
@@ -125,7 +125,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function identityV2(array $options = []): Identity\v2\Service
+    public function identityV2(array $options = [])
     {
         $defaults = ['catalogName' => 'keystone', 'catalogType' => 'identity'];
 
@@ -137,7 +137,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function identityV3(array $options = []): Service
+    public function identityV3(array $options = [])
     {
         $defaults = ['catalogName' => 'keystone', 'catalogType' => 'identity'];
 
@@ -149,7 +149,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function objectStoreV1(array $options = []): ObjectStore\v1\Service
+    public function objectStoreV1(array $options = [])
     {
         $defaults = ['catalogName' => 'swift', 'catalogType' => 'object-store'];
 
@@ -161,7 +161,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function blockStorageV2(array $options = []): BlockStorage\v2\Service
+    public function blockStorageV2(array $options = [])
     {
         $defaults = ['catalogName' => 'cinderv2', 'catalogType' => 'volumev2'];
 
@@ -173,7 +173,7 @@ class OpenStack
      *
      * @param array $options options that will be used in configuring the service
      */
-    public function imagesV2(array $options = []): Images\v2\Service
+    public function imagesV2(array $options = [])
     {
         $defaults = ['catalogName' => 'glance', 'catalogType' => 'image'];
 
@@ -183,7 +183,7 @@ class OpenStack
     /**
      * Creates a new Gnocchi Metric service v1.
      */
-    public function metricGnocchiV1(array $options = []): Metric\v1\Gnocchi\Service
+    public function metricGnocchiV1(array $options = [])
     {
         $defaults = ['catalogName' => 'gnocchi', 'catalogType' => 'metric'];
 

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Metric\v1\Gnocchi\Models;
 
@@ -43,7 +43,7 @@ class Metric extends OperatorResource implements Retrievable
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'resource' => new Alias('resource', Resource::class),

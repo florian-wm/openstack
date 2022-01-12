@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Transport;
 
@@ -11,7 +11,7 @@ use Psr\Http\Message\UriInterface;
 
 class Utils
 {
-    public static function jsonDecode(ResponseInterface $response, bool $assoc = true)
+    public static function jsonDecode(ResponseInterface $response, $assoc = true)
     {
         $jsonErrors = [
             JSON_ERROR_DEPTH          => 'JSON_ERROR_DEPTH - Maximum stack depth exceeded',
@@ -45,7 +45,7 @@ class Utils
      *
      * @return array
      */
-    public static function flattenJson($data, string $key = null)
+    public static function flattenJson($data, $key = null)
     {
         return (!empty($data) && $key && isset($data[$key])) ? $data[$key] : $data;
     }
@@ -58,7 +58,7 @@ class Utils
      *
      * @param string $url the url representation
      */
-    public static function normalizeUrl(string $url): string
+    public static function normalizeUrl($url)
     {
         if (false === strpos($url, 'http')) {
             $url = 'http://'.$url;
@@ -72,12 +72,12 @@ class Utils
      *
      * @param ...$paths
      */
-    public static function addPaths(UriInterface $uri, ...$paths): UriInterface
+    public static function addPaths(UriInterface $uri, ...$paths)
     {
         return GuzzleUtils::uriFor(rtrim((string) $uri, '/').'/'.implode('/', $paths));
     }
 
-    public static function appendPath(UriInterface $uri, $path): UriInterface
+    public static function appendPath(UriInterface $uri, $path)
     {
         return GuzzleUtils::uriFor(rtrim((string) $uri, '/').'/'.$path);
     }
@@ -88,7 +88,7 @@ class Utils
      * @param string $template  URI template
      * @param array  $variables Template variables
      */
-    public static function uri_template($template, array $variables): string
+    public static function uri_template($template, array $variables)
     {
         if (extension_loaded('uri_template')) {
             // @codeCoverageIgnoreStart

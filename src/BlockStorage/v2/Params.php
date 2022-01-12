@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\BlockStorage\v2;
 
@@ -8,7 +8,7 @@ use OpenStack\Common\Api\AbstractParams;
 
 class Params extends AbstractParams
 {
-    public function availabilityZone(): array
+    public function availabilityZone()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -18,7 +18,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function sourceVolId(): array
+    public function sourceVolId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -29,7 +29,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function desc(): array
+    public function desc()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -38,7 +38,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function snapshotId(): array
+    public function snapshotId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -49,7 +49,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function size(): array
+    public function size()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -59,7 +59,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function imageRef(): array
+    public function imageRef()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -70,7 +70,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function volumeType(): array
+    public function volumeType()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -80,7 +80,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function bootable(): array
+    public function bootable()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -89,7 +89,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function volumeStatus(): array
+    public function volumeStatus()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -99,7 +99,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function volumeMigrationStatus(): array
+    public function volumeMigrationStatus()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -110,7 +110,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function volumeAttachStatus(): array
+    public function volumeAttachStatus()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -121,7 +121,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function metadata(): array
+    public function metadata()
     {
         return [
             'type'        => self::OBJECT_TYPE,
@@ -136,7 +136,7 @@ TYPEOTHER
         ];
     }
 
-    public function sort(): array
+    public function sort()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -146,7 +146,7 @@ TYPEOTHER
         ];
     }
 
-    public function name(string $resource): array
+    public function name($resource)
     {
         return parent::name($resource) + [
             'type'     => self::STRING_TYPE,
@@ -154,7 +154,7 @@ TYPEOTHER
         ];
     }
 
-    public function idPath(): array
+    public function idPath()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -164,7 +164,7 @@ TYPEOTHER
         ];
     }
 
-    public function typeSpecs(): array
+    public function typeSpecs()
     {
         return [
             'type'        => self::OBJECT_TYPE,
@@ -175,7 +175,7 @@ TYPEOTHER
         ];
     }
 
-    public function volId(): array
+    public function volId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -186,7 +186,7 @@ TYPEOTHER
         ];
     }
 
-    public function force(): array
+    public function force()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -195,7 +195,7 @@ TYPEOTHER
         ];
     }
 
-    public function snapshotName(): array
+    public function snapshotName()
     {
         return parent::name('snapshot') + [
             'type'     => self::STRING_TYPE,
@@ -203,7 +203,7 @@ TYPEOTHER
         ];
     }
 
-    protected function quotaSetLimit($sentAs, $description): array
+    protected function quotaSetLimit($sentAs, $description)
     {
         return [
             'type'        => self::INT_TYPE,
@@ -213,62 +213,62 @@ TYPEOTHER
         ];
     }
 
-    public function quotaSetLimitInstances(): array
+    public function quotaSetLimitInstances()
     {
         return $this->quotaSetLimit('instances', 'The number of allowed instances for each tenant.');
     }
 
-    public function quotaSetBackupGigabytes(): array
+    public function quotaSetBackupGigabytes()
     {
         return $this->quotaSetLimit('backup_gigabytes', 'Total size of back-up storage (GiB)');
     }
 
-    public function quotaSetBackups(): array
+    public function quotaSetBackups()
     {
         return $this->quotaSetLimit('backups', 'The number of allowed back-ups');
     }
 
-    public function quotaSetGigabytes(): array
+    public function quotaSetGigabytes()
     {
         return $this->quotaSetLimit('gigabytes', 'Total Size of Volumes and Snapshots (GiB)');
     }
 
-    public function quotaSetGigabytesIscsi(): array
+    public function quotaSetGigabytesIscsi()
     {
         return $this->quotaSetLimit('gigabytes_iscsi', 'Total Size of Volumes and Snapshots iscsi (GiB)');
     }
 
-    public function quotaSetTenantId(): array
+    public function quotaSetTenantId()
     {
         return $this->quotaSetLimit('id', 'Tenant Id');
     }
 
-    public function quotaSetPerVolumeGigabytes(): array
+    public function quotaSetPerVolumeGigabytes()
     {
         return $this->quotaSetLimit('per_volume_gigabytes', 'Allowed size per Volume (GiB)');
     }
 
-    public function quotaSetSnapshots(): array
+    public function quotaSetSnapshots()
     {
         return $this->quotaSetLimit('snapshots', 'The number of allowed snapshots');
     }
 
-    public function quotaSetSnapshotsIscsi(): array
+    public function quotaSetSnapshotsIscsi()
     {
         return $this->quotaSetLimit('snapshots_iscsi', 'The number of allowed snapshots iscsi');
     }
 
-    public function quotaSetVolumes(): array
+    public function quotaSetVolumes()
     {
         return $this->quotaSetLimit('volumes', 'The number of allowed volumes');
     }
 
-    public function quotaSetVolumesIscsi(): array
+    public function quotaSetVolumesIscsi()
     {
         return $this->quotaSetLimit('volumes_iscsi', 'The number of allowed volumes iscsi');
     }
 
-    public function projectId(): array
+    public function projectId()
     {
         return [
             'type'        => self::STRING_TYPE,

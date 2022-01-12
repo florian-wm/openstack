@@ -10,7 +10,7 @@ class TokenTest extends TestCase
 {
     private $token;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

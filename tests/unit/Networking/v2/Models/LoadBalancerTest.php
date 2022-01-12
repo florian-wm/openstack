@@ -14,7 +14,7 @@ class LoadBalancerTest extends TestCase
 {
     private $loadbalancer;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

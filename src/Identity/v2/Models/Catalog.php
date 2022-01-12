@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v2\Models;
 
@@ -26,7 +26,7 @@ class Catalog extends OperatorResource implements \OpenStack\Common\Auth\Catalog
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'entries' => new Alias('entries', Entry::class, true),
@@ -36,7 +36,7 @@ class Catalog extends OperatorResource implements \OpenStack\Common\Auth\Catalog
     /**
      * {@inheritdoc}
      */
-    public function populateFromResponse(ResponseInterface $response): self
+    public function populateFromResponse(ResponseInterface $response)
     {
         $entries = Utils::jsonDecode($response)['access']['serviceCatalog'];
 
@@ -52,7 +52,7 @@ class Catalog extends OperatorResource implements \OpenStack\Common\Auth\Catalog
         string $serviceType,
         string $region,
         string $urlType = self::DEFAULT_URL_TYPE
-    ): string {
+    ) {
         foreach ($this->entries as $entry) {
             if ($entry->matches($serviceName, $serviceType) && ($url = $entry->getEndpointUrl($region, $urlType))) {
                 return $url;

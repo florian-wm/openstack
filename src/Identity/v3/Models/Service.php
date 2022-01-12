@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v3\Models;
 
@@ -41,7 +41,7 @@ class Service extends OperatorResource implements Creatable, Listable, Retrievab
     /**
      * {@inheritdoc}
      */
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
             'endpoints' => new Alias('endpoints', Endpoint::class, true),
@@ -53,7 +53,7 @@ class Service extends OperatorResource implements Creatable, Listable, Retrievab
      *
      * @param array $data {@see \OpenStack\Identity\v3\Api::postServices}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postServices(), $data);
 
@@ -86,12 +86,12 @@ class Service extends OperatorResource implements Creatable, Listable, Retrievab
         $this->executeWithState($this->api->deleteService());
     }
 
-    private function nameMatches(string $value): bool
+    private function nameMatches($value)
     {
         return $this->name && $this->name == $value;
     }
 
-    private function typeMatches(string $value): bool
+    private function typeMatches($value)
     {
         return $this->type && $this->type == $value;
     }
@@ -106,7 +106,7 @@ class Service extends OperatorResource implements Creatable, Listable, Retrievab
      *
      * @return string|false
      */
-    public function getUrl(string $name, string $type, string $region, string $interface)
+    public function getUrl($name, $type, $region, $interface)
     {
         if (!$this->nameMatches($name) || !$this->typeMatches($type)) {
             return false;

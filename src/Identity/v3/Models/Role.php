@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v3\Models;
 
@@ -31,7 +31,7 @@ class Role extends OperatorResource implements Creatable, Listable, Deletable
      *
      * @param array $data {@see \OpenStack\Identity\v3\Api::postRoles}
      */
-    public function create(array $data): Creatable
+    public function create(array $data)
     {
         $response = $this->execute($this->api->postRoles(), $data);
 

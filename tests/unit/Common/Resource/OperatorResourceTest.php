@@ -17,7 +17,7 @@ class OperatorResourceTest extends TestCase
     /** @var TestOperatorResource */
     private $resource;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

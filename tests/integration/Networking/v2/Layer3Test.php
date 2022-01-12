@@ -11,12 +11,12 @@ use OpenStack\Networking\v2\Models\Subnet;
 
 class Layer3Test extends TestCase
 {
-    public function getService(): \OpenStack\Networking\v2\Extensions\Layer3\Service
+    public function getService()
     {
         return $this->getBaseClient()->networkingV2ExtLayer3();
     }
 
-    private function getV2Service(): \OpenStack\Networking\v2\Service
+    private function getV2Service()
     {
         return $this->getBaseClient()->networkingV2();
     }
@@ -37,7 +37,7 @@ class Layer3Test extends TestCase
         $this->deleteItems($this->getService()->listFloatingIps());
     }
 
-    private function createNetwork(bool $routerAccessible = true): Network
+    private function createNetwork($routerAccessible = true)
     {
         $network = $this->getV2Service()->createNetwork([
             'name'             => $this->randomStr(),
@@ -47,7 +47,7 @@ class Layer3Test extends TestCase
         return $network;
     }
 
-    private function createSubnet(Network $network, string $cidr = '192.168.199.0/24'): Subnet
+    private function createSubnet(Network $network, $cidr = '192.168.199.0/24')
     {
         return $this->getV2Service()->createSubnet([
             'networkId' => $network->id,
@@ -57,7 +57,7 @@ class Layer3Test extends TestCase
         ]);
     }
 
-    private function createPort(Network $network): Port
+    private function createPort(Network $network)
     {
         return $this->getV2Service()->createPort([
             'networkId' => $network->id,
@@ -65,7 +65,7 @@ class Layer3Test extends TestCase
         ]);
     }
 
-    private function findSubnetIp(Port $port, Subnet $subnet): string
+    private function findSubnetIp(Port $port, Subnet $subnet)
     {
         foreach ($port->fixedIps as $fixedIp) {
             if ($fixedIp['subnet_id'] == $subnet->id) {

@@ -11,7 +11,7 @@ class LoadBalancerMemberTest extends TestCase
 {
     private $member;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

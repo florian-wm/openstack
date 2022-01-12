@@ -11,7 +11,7 @@ class RoleTest extends TestCase
 {
     private $role;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

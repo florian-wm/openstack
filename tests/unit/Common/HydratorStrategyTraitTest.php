@@ -10,7 +10,7 @@ class HydratorStrategyTraitTest extends TestCase
     /** @var Fixture */
     private $fixture;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->fixture = new Fixture();
     }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2\Models;
 
@@ -84,7 +84,7 @@ class LoadBalancerMember extends OperatorResource implements Creatable, Retrieva
     /**
      * {@inheritdoc}
      */
-    public function create(array $userOptions): Creatable
+    public function create(array $userOptions)
     {
         $userOptions = array_merge(['poolId' => $this->poolId], $userOptions);
         $response    = $this->execute($this->api->postLoadBalancerMember(), $userOptions);

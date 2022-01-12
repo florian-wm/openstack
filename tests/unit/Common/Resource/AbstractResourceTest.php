@@ -14,7 +14,7 @@ class AbstractResourceTest extends TestCase
     /** @var TestResource */
     private $resource;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 
@@ -141,7 +141,7 @@ class TestResource extends AbstractResource
         'camel_attr'  => 'camelAttr',
     ];
 
-    protected function getAliases(): array
+    protected function getAliases()
     {
         return parent::getAliases() + [
                 'created_at' => new Alias('createdAt', \DateTimeImmutable::class),

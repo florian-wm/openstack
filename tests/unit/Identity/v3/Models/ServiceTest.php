@@ -12,7 +12,7 @@ class ServiceTest extends TestCase
 {
     private $service;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

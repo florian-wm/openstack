@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace OpenStack\Common\Auth;
 
@@ -18,5 +17,5 @@ interface Catalog
      *
      * @returns string
      */
-    public function getServiceUrl(string $name, string $type, string $region, string $urlType): string;
+    public function getServiceUrl($name, $type, $region, $urlType);
 }

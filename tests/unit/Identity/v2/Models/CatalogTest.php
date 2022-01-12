@@ -10,7 +10,7 @@ class CatalogTest extends TestCase
 {
     private $catalog;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

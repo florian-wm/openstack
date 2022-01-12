@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Transport;
 
@@ -9,7 +9,7 @@ use GuzzleHttp\Utils;
 
 class HandlerStack extends GuzzleStack
 {
-    public static function create(?callable $handler = null): GuzzleStack
+    public static function create(?callable $handler = null)
     {
         $stack = new self($handler ?: Utils::chooseHandler());
         $stack->push(Middleware::httpErrors(), 'http_errors');

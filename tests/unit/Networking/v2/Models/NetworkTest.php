@@ -11,7 +11,7 @@ class NetworkTest extends TestCase
 {
     private $network;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

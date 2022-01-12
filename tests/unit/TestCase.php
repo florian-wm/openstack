@@ -18,7 +18,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     protected $api;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->client = $this->prophesize(ClientInterface::class);
     }

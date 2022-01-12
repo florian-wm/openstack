@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common\Transport;
 
@@ -22,7 +22,7 @@ class JsonSerializer
      *
      * @return array|mixed
      */
-    private function stockValue(Parameter $param, $userValue, array $json): array
+    private function stockValue(Parameter $param, $userValue, array $json)
     {
         $name = $param->getName();
         if ($path = $param->getPath()) {
@@ -46,7 +46,7 @@ class JsonSerializer
      *
      * @return array|mixed
      */
-    private function stockArrayJson(Parameter $param, array $userValue): array
+    private function stockArrayJson(Parameter $param, array $userValue)
     {
         $elems = [];
         foreach ($userValue as $item) {
@@ -62,7 +62,7 @@ class JsonSerializer
      * @param Parameter $param     The schema that defines how the JSON field is being populated
      * @param mixed     $userValue The user value that is populating a JSON field
      */
-    private function stockObjectJson(Parameter $param, \stdClass $userValue): array
+    private function stockObjectJson(Parameter $param, \stdClass $userValue)
     {
         $object = [];
         foreach ($userValue as $key => $val) {
@@ -80,7 +80,7 @@ class JsonSerializer
      * @param mixed     $userValue The user value that is populating a JSON field
      * @param array     $json      The existing JSON structure that will be populated
      */
-    public function stockJson(Parameter $param, $userValue, array $json): array
+    public function stockJson(Parameter $param, $userValue, array $json)
     {
         if ($param->isArray()) {
             $userValue = $this->stockArrayJson($param, $userValue);

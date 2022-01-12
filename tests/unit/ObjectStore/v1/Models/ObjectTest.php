@@ -15,7 +15,7 @@ class ObjectTest extends TestCase
 
     private $object;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

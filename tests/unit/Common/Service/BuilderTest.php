@@ -15,7 +15,7 @@ class BuilderTest extends TestCase
     private $builder;
     private $opts;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->builder = new Builder([]);
 
@@ -134,12 +134,12 @@ class BuilderTest extends TestCase
 
 class FakeToken implements Token
 {
-    public function getId(): string
+    public function getId()
     {
         return '';
     }
 
-    public function hasExpired(): bool
+    public function hasExpired()
     {
         return false;
     }
@@ -147,7 +147,7 @@ class FakeToken implements Token
 
 class TestIdentity implements IdentityService
 {
-    public function authenticate(array $options): array
+    public function authenticate(array $options)
     {
         return [];
     }

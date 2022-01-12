@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Images\v2;
 
@@ -16,7 +16,7 @@ class Api extends AbstractApi
         $this->basePath = 'v2/';
     }
 
-    public function postImages(): array
+    public function postImages()
     {
         return [
             'method' => 'POST',
@@ -34,7 +34,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImages(): array
+    public function getImages()
     {
         return [
             'method' => 'GET',
@@ -56,7 +56,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImage(): array
+    public function getImage()
     {
         return [
             'method' => 'GET',
@@ -65,7 +65,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function patchImage(): array
+    public function patchImage()
     {
         return [
             'method' => 'PATCH',
@@ -78,7 +78,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteImage(): array
+    public function deleteImage()
     {
         return [
             'method' => 'DELETE',
@@ -87,7 +87,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function reactivateImage(): array
+    public function reactivateImage()
     {
         return [
             'method' => 'POST',
@@ -96,7 +96,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deactivateImage(): array
+    public function deactivateImage()
     {
         return [
             'method' => 'POST',
@@ -105,7 +105,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postImageData(): array
+    public function postImageData()
     {
         return [
             'method' => 'PUT',
@@ -118,7 +118,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImageData(): array
+    public function getImageData()
     {
         return [
             'method' => 'GET',
@@ -127,7 +127,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImageSchema(): array
+    public function getImageSchema()
     {
         return [
             'method' => 'GET',
@@ -136,7 +136,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function postImageMembers(): array
+    public function postImageMembers()
     {
         return [
             'method' => 'POST',
@@ -148,7 +148,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImageMembers(): array
+    public function getImageMembers()
     {
         return [
             'method' => 'GET',
@@ -157,7 +157,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function getImageMember(): array
+    public function getImageMember()
     {
         return [
             'method' => 'GET',
@@ -169,7 +169,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function deleteImageMember(): array
+    public function deleteImageMember()
     {
         return [
             'method' => 'DELETE',
@@ -181,7 +181,7 @@ class Api extends AbstractApi
         ];
     }
 
-    public function putImageMember(): array
+    public function putImageMember()
     {
         return [
             'method' => 'PUT',

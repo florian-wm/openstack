@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Common;
 
@@ -42,7 +42,7 @@ class JsonPath
      * @param $path  The XPath to use
      * @param $value The new value of the node
      */
-    public function set(string $path, $value)
+    public function set($path, $value)
     {
         $this->jsonStructure = $this->setPath($path, $value, $this->jsonStructure);
     }
@@ -56,7 +56,7 @@ class JsonPath
      *
      * @return mixed
      */
-    private function setPath(string $path, $value, array $json): array
+    private function setPath($path, $value, array $json)
     {
         $nodes = explode('.', $path);
         $point = array_shift($nodes);
@@ -91,7 +91,7 @@ class JsonPath
      *
      * @return mixed|null
      */
-    public function get(string $path)
+    public function get($path)
     {
         return $this->getPath($path, $this->jsonStructure);
     }
@@ -102,7 +102,7 @@ class JsonPath
      * @param $path
      * @param $json
      */
-    private function getPath(string $path, $json)
+    private function getPath($path, $json)
     {
         $nodes = explode('.', $path);
         $point = array_shift($nodes);

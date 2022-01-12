@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Identity\v3;
 
@@ -16,7 +16,7 @@ use OpenStack\Common\Service\AbstractService;
  */
 class Service extends AbstractService implements IdentityService
 {
-    public static function factory(ClientInterface $client): self
+    public static function factory(ClientInterface $client)
     {
         return new static($client, new Api());
     }
@@ -28,7 +28,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @return array Returns a {@see Models\Token} as the first element, a string base URL as the second
      */
-    public function authenticate(array $options): array
+    public function authenticate(array $options)
     {
         $authOptions = array_intersect_key($options, $this->api->postTokens()['params']);
 
@@ -59,7 +59,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $cachedToken {@see \OpenStack\Identity\v3\Models\Token::export}
      */
-    public function generateTokenFromCache(array $cachedToken): Models\Token
+    public function generateTokenFromCache(array $cachedToken)
     {
         return $this->model(Models\Token::class)->populateFromArray($cachedToken);
     }
@@ -69,7 +69,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postTokens}
      */
-    public function generateToken(array $options): Models\Token
+    public function generateToken(array $options)
     {
         return $this->model(Models\Token::class)->create($options);
     }
@@ -80,7 +80,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the token to retrieve
      */
-    public function getToken(string $id): Models\Token
+    public function getToken($id)
     {
         return $this->model(Models\Token::class, ['id' => $id]);
     }
@@ -90,7 +90,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the token
      */
-    public function validateToken(string $id): bool
+    public function validateToken($id)
     {
         try {
             $this->execute($this->api->headTokens(), ['tokenId' => $id]);
@@ -107,7 +107,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the token
      */
-    public function revokeToken(string $id)
+    public function revokeToken($id)
     {
         $this->execute($this->api->deleteTokens(), ['tokenId' => $id]);
     }
@@ -117,7 +117,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postServices}
      */
-    public function createService(array $options): Models\Service
+    public function createService(array $options)
     {
         return $this->model(Models\Service::class)->create($options);
     }
@@ -129,7 +129,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getServices}
      */
-    public function listServices(array $options = []): \Generator
+    public function listServices(array $options = [])
     {
         return $this->model(Models\Service::class)->enumerate($this->api->getServices(), $options);
     }
@@ -140,7 +140,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the service
      */
-    public function getService(string $id): Models\Service
+    public function getService($id)
     {
         return $this->model(Models\Service::class, ['id' => $id]);
     }
@@ -150,7 +150,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postEndpoints}
      */
-    public function createEndpoint(array $options): Models\Endpoint
+    public function createEndpoint(array $options)
     {
         return $this->model(Models\Endpoint::class)->create($options);
     }
@@ -161,7 +161,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the service
      */
-    public function getEndpoint(string $id): Models\Endpoint
+    public function getEndpoint($id)
     {
         return $this->model(Models\Endpoint::class, ['id' => $id]);
     }
@@ -173,7 +173,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getEndpoints}
      */
-    public function listEndpoints(array $options = []): \Generator
+    public function listEndpoints(array $options = [])
     {
         return $this->model(Models\Endpoint::class)->enumerate($this->api->getEndpoints(), $options);
     }
@@ -183,7 +183,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postDomains}
      */
-    public function createDomain(array $options): Models\Domain
+    public function createDomain(array $options)
     {
         return $this->model(Models\Domain::class)->create($options);
     }
@@ -195,7 +195,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getDomains}
      */
-    public function listDomains(array $options = []): \Generator
+    public function listDomains(array $options = [])
     {
         return $this->model(Models\Domain::class)->enumerate($this->api->getDomains(), $options);
     }
@@ -206,7 +206,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the domain
      */
-    public function getDomain(string $id): Models\Domain
+    public function getDomain($id)
     {
         return $this->model(Models\Domain::class, ['id' => $id]);
     }
@@ -216,7 +216,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postProjects}
      */
-    public function createProject(array $options): Models\Project
+    public function createProject(array $options)
     {
         return $this->model(Models\Project::class)->create($options);
     }
@@ -228,7 +228,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getProjects}
      */
-    public function listProjects(array $options = []): \Generator
+    public function listProjects(array $options = [])
     {
         return $this->model(Models\Project::class)->enumerate($this->api->getProjects(), $options);
     }
@@ -239,7 +239,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the project
      */
-    public function getProject(string $id): Models\Project
+    public function getProject($id)
     {
         return $this->model(Models\Project::class, ['id' => $id]);
     }
@@ -249,7 +249,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postUsers}
      */
-    public function createUser(array $options): Models\User
+    public function createUser(array $options)
     {
         return $this->model(Models\User::class)->create($options);
     }
@@ -261,7 +261,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getUsers}
      */
-    public function listUsers(array $options = []): \Generator
+    public function listUsers(array $options = [])
     {
         return $this->model(Models\User::class)->enumerate($this->api->getUsers(), $options);
     }
@@ -272,7 +272,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the user
      */
-    public function getUser(string $id): Models\User
+    public function getUser($id)
     {
         return $this->model(Models\User::class, ['id' => $id]);
     }
@@ -282,7 +282,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postGroups}
      */
-    public function createGroup(array $options): Models\Group
+    public function createGroup(array $options)
     {
         return $this->model(Models\Group::class)->create($options);
     }
@@ -294,7 +294,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getGroups}
      */
-    public function listGroups(array $options = []): \Generator
+    public function listGroups(array $options = [])
     {
         return $this->model(Models\Group::class)->enumerate($this->api->getGroups(), $options);
     }
@@ -305,7 +305,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the group
      */
-    public function getGroup($id): Models\Group
+    public function getGroup($id)
     {
         return $this->model(Models\Group::class, ['id' => $id]);
     }
@@ -315,7 +315,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postCredentials}
      */
-    public function createCredential(array $options): Models\Credential
+    public function createCredential(array $options)
     {
         return $this->model(Models\Credential::class)->create($options);
     }
@@ -325,7 +325,7 @@ class Service extends AbstractService implements IdentityService
      * be accessed using a foreach loop. Often the API will not return the full state of the resource in collections;
      * you will need to use retrieve() to pull in the full state of the remote resource from the API.
      */
-    public function listCredentials(): \Generator
+    public function listCredentials()
     {
         return $this->model(Models\Credential::class)->enumerate($this->api->getCredentials());
     }
@@ -336,7 +336,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the credential
      */
-    public function getCredential(string $id): Models\Credential
+    public function getCredential($id)
     {
         return $this->model(Models\Credential::class, ['id' => $id]);
     }
@@ -346,7 +346,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postRoles}
      */
-    public function createRole(array $options): Models\Role
+    public function createRole(array $options)
     {
         return $this->model(Models\Role::class)->create($options);
     }
@@ -358,7 +358,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getRoles}
      */
-    public function listRoles(array $options = []): \Generator
+    public function listRoles(array $options = [])
     {
         return $this->model(Models\Role::class)->enumerate($this->api->getRoles(), $options);
     }
@@ -370,7 +370,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getRoleAssignments}
      */
-    public function listRoleAssignments(array $options = []): \Generator
+    public function listRoleAssignments(array $options = [])
     {
         return $this->model(Models\Assignment::class)->enumerate($this->api->getRoleAssignments(), $options);
     }
@@ -380,7 +380,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::postPolicies}
      */
-    public function createPolicy(array $options): Models\Policy
+    public function createPolicy(array $options)
     {
         return $this->model(Models\Policy::class)->create($options);
     }
@@ -392,7 +392,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param array $options {@see \OpenStack\Identity\v3\Api::getPolicies}
      */
-    public function listPolicies(array $options = []): \Generator
+    public function listPolicies(array $options = [])
     {
         return $this->model(Models\Policy::class)->enumerate($this->api->getPolicies(), $options);
     }
@@ -403,7 +403,7 @@ class Service extends AbstractService implements IdentityService
      *
      * @param string $id The unique ID of the policy
      */
-    public function getPolicy(string $id): Models\Policy
+    public function getPolicy($id)
     {
         return $this->model(Models\Policy::class, ['id' => $id]);
     }

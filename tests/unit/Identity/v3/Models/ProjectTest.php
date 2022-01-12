@@ -13,7 +13,7 @@ class ProjectTest extends TestCase
 {
     private $project;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->rootFixturesDir = dirname(__DIR__);
 

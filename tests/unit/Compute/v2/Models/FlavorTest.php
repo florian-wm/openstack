@@ -11,7 +11,7 @@ class FlavorTest extends TestCase
 {
     private $flavor;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 namespace OpenStack\Networking\v2;
 
@@ -11,7 +11,7 @@ class Params extends AbstractParams
     /**
      * Returns information about description parameter.
      */
-    public function descriptionJson(): array
+    public function descriptionJson()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -22,7 +22,7 @@ class Params extends AbstractParams
     /**
      * Returns information about name parameter.
      */
-    public function nameJson(): array
+    public function nameJson()
     {
         return [
             'type'     => self::STRING_TYPE,
@@ -30,7 +30,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function urlId($type): array
+    public function urlId($type)
     {
         return array_merge(parent::id($type), [
             'required' => true,
@@ -38,7 +38,7 @@ class Params extends AbstractParams
         ]);
     }
 
-    public function shared(): array
+    public function shared()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -47,7 +47,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function adminStateUp(): array
+    public function adminStateUp()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -57,7 +57,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function portSecurityEnabled(): array
+    public function portSecurityEnabled()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -68,7 +68,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function networkId(): array
+    public function networkId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -78,7 +78,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function ipVersion(): array
+    public function ipVersion()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -88,7 +88,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function cidr(): array
+    public function cidr()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -98,7 +98,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function tenantId(): array
+    public function tenantId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -107,7 +107,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function projectId(): array
+    public function projectId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -117,7 +117,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function gatewayIp(): array
+    public function gatewayIp()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -126,7 +126,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function enableDhcp(): array
+    public function enableDhcp()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -135,7 +135,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function dnsNameservers(): array
+    public function dnsNameservers()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -148,7 +148,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function allocationPools(): array
+    public function allocationPools()
     {
         return [
             'type'   => self::ARRAY_TYPE,
@@ -170,7 +170,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function hostRoutes(): array
+    public function hostRoutes()
     {
         return [
             'type'   => self::ARRAY_TYPE,
@@ -192,7 +192,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function statusQuery(): array
+    public function statusQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -202,7 +202,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function displayNameQuery(): array
+    public function displayNameQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -212,7 +212,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function adminStateQuery(): array
+    public function adminStateQuery()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -222,7 +222,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function networkIdQuery(): array
+    public function networkIdQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -232,7 +232,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function tenantIdQuery(): array
+    public function tenantIdQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -242,7 +242,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function deviceOwnerQuery(): array
+    public function deviceOwnerQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -252,7 +252,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function macAddrQuery(): array
+    public function macAddrQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -262,7 +262,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function portIdQuery(): array
+    public function portIdQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -272,7 +272,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function secGroupsQuery(): array
+    public function secGroupsQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -282,7 +282,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function deviceIdQuery(): array
+    public function deviceIdQuery()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -292,7 +292,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function macAddr(): array
+    public function macAddr()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -302,7 +302,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function fixedIps(): array
+    public function fixedIps()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -329,7 +329,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function subnetId(): array
+    public function subnetId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -339,7 +339,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function ipAddress(): array
+    public function ipAddress()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -349,7 +349,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function secGroupIds(): array
+    public function secGroupIds()
     {
         return [
             'type'     => self::ARRAY_TYPE,
@@ -362,7 +362,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function allowedAddrPairs(): array
+    public function allowedAddrPairs()
     {
         return [
             'type'        => self::ARRAY_TYPE,
@@ -388,7 +388,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function deviceOwner(): array
+    public function deviceOwner()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -398,7 +398,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function deviceId(): array
+    public function deviceId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -408,22 +408,22 @@ class Params extends AbstractParams
         ];
     }
 
-    public function queryName(): array
+    public function queryName()
     {
         return $this->queryFilter('name');
     }
 
-    public function queryTenantId(): array
+    public function queryTenantId()
     {
         return $this->queryFilter('tenant_id');
     }
 
-    public function queryStatus(): array
+    public function queryStatus()
     {
         return $this->queryFilter('status');
     }
 
-    private function queryFilter($field): array
+    private function queryFilter($field)
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -434,7 +434,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function routerAccessibleJson(): array
+    public function routerAccessibleJson()
     {
         return [
             'type'        => self::BOOL_TYPE,
@@ -444,7 +444,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function queryRouterExternal(): array
+    public function queryRouterExternal()
     {
         return [
             'type'     => self::BOOL_TYPE,
@@ -453,7 +453,7 @@ class Params extends AbstractParams
         ];
     }
 
-    protected function quotaLimit(string $sentAs, string $description): array
+    protected function quotaLimit($sentAs, $description)
     {
         return [
             'type'        => self::INT_TYPE,
@@ -463,52 +463,52 @@ class Params extends AbstractParams
         ];
     }
 
-    public function quotaLimitFloatingIp(): array
+    public function quotaLimitFloatingIp()
     {
         return $this->quotaLimit('floatingip', 'The number of floating IP addresses allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitNetwork(): array
+    public function quotaLimitNetwork()
     {
         return $this->quotaLimit('network', 'The number of networks allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitPort(): array
+    public function quotaLimitPort()
     {
         return $this->quotaLimit('port', 'The number of ports allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitRbacPolicy(): array
+    public function quotaLimitRbacPolicy()
     {
         return $this->quotaLimit('rbac_policy', 'The number of role-based access control (RBAC) policies for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitRouter(): array
+    public function quotaLimitRouter()
     {
         return $this->quotaLimit('router', 'The number of routers allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitSecurityGroup(): array
+    public function quotaLimitSecurityGroup()
     {
         return $this->quotaLimit('security_group', 'The number of security groups allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitSecurityGroupRule(): array
+    public function quotaLimitSecurityGroupRule()
     {
         return $this->quotaLimit('security_group_rule', 'The number of security group rules allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitSubnet(): array
+    public function quotaLimitSubnet()
     {
         return $this->quotaLimit('subnet', 'The number of subnets allowed for each project. A value of -1 means no limit.');
     }
 
-    public function quotaLimitSubnetPool(): array
+    public function quotaLimitSubnetPool()
     {
         return $this->quotaLimit('subnetpool', 'The number of subnet pools allowed for each project. A value of -1 means no limit.');
     }
 
-    public function vipSubnetId(): array
+    public function vipSubnetId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -518,7 +518,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function vipAddress(): array
+    public function vipAddress()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -528,7 +528,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function provider(): array
+    public function provider()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -537,7 +537,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function connectionLimit(): array
+    public function connectionLimit()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -547,7 +547,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function loadbalancerId(): array
+    public function loadbalancerId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -557,7 +557,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function loadbalancerIdUrl(): array
+    public function loadbalancerIdUrl()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -566,7 +566,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function protocol(): array
+    public function protocol()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -575,7 +575,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function protocolPort(): array
+    public function protocolPort()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -585,7 +585,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function lbAlgorithm(): array
+    public function lbAlgorithm()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -595,7 +595,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function listenerId(): array
+    public function listenerId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -605,7 +605,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function sessionPersistence(): array
+    public function sessionPersistence()
     {
         return [
             'type'        => self::OBJECT_TYPE,
@@ -615,7 +615,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function address(): array
+    public function address()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -625,7 +625,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function poolId(): array
+    public function poolId()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -634,7 +634,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function poolIdJson(): array
+    public function poolIdJson()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -644,7 +644,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function weight(): array
+    public function weight()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -653,7 +653,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function delay(): array
+    public function delay()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -662,7 +662,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function timeout(): array
+    public function timeout()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -671,7 +671,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function maxRetries(): array
+    public function maxRetries()
     {
         return [
             'type'        => self::INT_TYPE,
@@ -681,7 +681,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function httpMethod(): array
+    public function httpMethod()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -691,7 +691,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function urlPath(): array
+    public function urlPath()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -701,7 +701,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function expectedCodes(): array
+    public function expectedCodes()
     {
         return [
             'type'        => self::STRING_TYPE,
@@ -711,7 +711,7 @@ class Params extends AbstractParams
         ];
     }
 
-    public function type(): array
+    public function type()
     {
         return [
             'type'        => self::STRING_TYPE,

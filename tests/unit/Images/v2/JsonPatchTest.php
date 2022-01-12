@@ -9,7 +9,7 @@ class JsonPatchTest extends TestCase
 {
     private $jsonPatch;
 
-    public function setUp(): void
+    public function setUp()
     {
         $this->jsonPatch = new JsonPatch();
     }
